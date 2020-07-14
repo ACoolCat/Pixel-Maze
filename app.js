@@ -64,5 +64,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function moveHero(e){
     squares[heroCurrentIndex].classList.remove('hero')
+    switch(e.keyCode) {
+    case 37:
+      if(heroCurrentIndex % width !== 0
+        && !squares[heroCurrentIndex -1].classList.contains('wall')
+        && !squares[heroCurrentIndex -1].classList.contains('ghost-lair'))
+       heroCurrentIndex -=1
+
+       if(heroCurrentIndex -1 === 363) {
+         heroCurrentIndex = 391
+       }
+      break
+    case 38:
+
+      if(heroCurrentIndex - width >=0
+        && !squares[heroCurrentIndex -width].classList.contains('wall')
+        && !squares[heroCurrentIndex - width].classList.contains('ghost-lair'))
+        heroCurrentIndex -=width
+      break
+    case 39:
+      if(heroCurrentIndex % width < width -1
+        && !squares[heroCurrentIndex +1].classList.contains('wall')
+        && !squares[heroCurrentIndex +1].classList.contains('ghost-lair'))
+        heroCurrentIndex +=1
+
+        if(heroCurrentIndex +1 === 392) {
+          heroCurrentIndex = 364
+        }
+      break
+    case 40:
+      if(heroCurrentIndex + width < width * width
+        && !squares[heroCurrentIndex +width].classList.contains('wall')
+        && !squares[heroCurrentIndex +width].classList.contains('ghost-lair'))
+        heroCurrentIndex +=width
+      break
   }
+  squares[heroCurrentIndex].classList.add('hero')
+
+
+  }
+  document.addEventListener('keyup', moveHero)
 })
