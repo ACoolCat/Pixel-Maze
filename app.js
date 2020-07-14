@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       switch(layout[i]) {
         case 0:
-          squares[i].classList.add('pac-dot')
+          squares[i].classList.add('sugar-pill')
         break;
         case 1:
           squares[i].classList.add('wall')
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
           squares[i].classList.add('ghost-lair')
         break;
         case 3:
-          squares[i].classList.add('power-pellet')
+          squares[i].classList.add('gumdrop')
       }
     }
   }
