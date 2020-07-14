@@ -102,17 +102,31 @@ document.addEventListener('DOMContentLoaded', () => {
   squares[heroCurrentIndex].classList.add('hero')
 
   sugarPillEaten()
+  gumdropEaten()
 
 
   }
   document.addEventListener('keyup', moveHero)
 
-  function sugarPillEaten() {
+  function sugarPillEaten(){
     if(squares[heroCurrentIndex].classList.contains('sugar-pill')){
       score++
       scoreDisplay.innerHTML = score
       squares[heroCurrentIndex].classList.remove('sugar-pill')
     }
+  }
+
+  function gumdropEaten(){
+    if(squares[heroCurrentIndex].classList.contains('gumdrop')){
+      score +=10
+      monsters.forEach(monster=> monster.isHunted = true)
+      setTimeout(unHuntMonsters, 10000)
+      squares[heroCurrentIndex].classList.remove('gumdrop')
+    }
+  }
+
+  function unHuntMonsters(){
+    monsters.forEach(monster => monster.isHunted = false)
   }
 
 
@@ -124,6 +138,8 @@ document.addEventListener('DOMContentLoaded', () => {
       this.startIndex = startIndex
       this.speed = speed
       this.currentIndex = startIndex
+      this.timerId = NaN
+      this.isHunted = false
     }
   }
 
@@ -153,11 +169,11 @@ document.addEventListener('DOMContentLoaded', () => {
         squares[monster.currentIndex].classList.add(monster.className, 'monster')
       } else direction = directions[Math.floor(Math.random() * directions.length)]
 
-      if (monster.isScared){
+      if (monster.isHunted){
         squares[monster.currentIndex].classList.add('hunted-monster')
       }
 
-      if(monster.isScared && squares[monster.currentIndex].classList.contains('hero')) {
+      if(monster.isHunted && squares[monster.currentIndex].classList.contains('hero')) {
         monster.currentIndex = monster.startIndex
         score +=100
         squares[monster.currentIndex].classList.add(monster.className, 'monster')
