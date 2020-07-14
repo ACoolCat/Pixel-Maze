@@ -117,15 +117,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  monster = [
+  monsters = [
     new Monster('bill', 348, 250),
     new Monster('bob', 377, 400),
     new Monster('biff', 351, 300),
     new Monster('bloid', 378, 500)
   ]
 
-  monster.forEach(monster => {
+  monsters.forEach(monster => {
     squares[monster.currentIndex].classList.add(monster.className)
     squares[monster.currentIndex].classList.add('monster')
   })
+
+  monsters.forEach(monster => moveMonster(monster))
+
+  function moveMonster(monster){
+    const directions = [-1, +1, width, -width]
+    let direction = directions[Math.floor(Math.random() * directions.length)]
+
+    monster.timerId = setInterval(function(){
+      if (!squares[monster.currentIndex + direction].classList.contains('wall')
+      && !squares[monster.currentIndex + direction].classList.contains('monster')) {
+        squares[monster.currentIndex].classList.remove(monster.className, 'monster', 'hunted-monster')
+        monster.currentIndex += direction
+        squares[monster.currentIndex].classList.add(monster.className, 'monster')
+      } else direction = directions[Math.floor(Math.random() * directions.length)]
+
+      if (monster.isScared){
+        squares[monster.currentIndex].classList.add('hunted-monster')
+      }
+
+      if(monster.isScared && squares[monster.currentIndex].classList.contains('hero')) {
+        monster.currentIndex = monster.startIndex
+        score +=100
+        squares[monster.currentIndex].classList.add(monster.className, 'monster')
+      }
+      // checkForGameOver()
+
+    }, monster.speed)
+  }
+
 })
