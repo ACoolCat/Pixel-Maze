@@ -101,9 +101,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   squares[heroCurrentIndex].classList.add('hero')
 
+  sugarPillEaten()
+
 
   }
   document.addEventListener('keyup', moveHero)
+
+  function sugarPillEaten() {
+    if(squares[heroCurrentIndex].classList.contains('sugar-pill')){
+      score++
+      scoreDisplay.innerHTML = score
+      squares[heroCurrentIndex].classList.remove('sugar-pill')
+    }
+  }
 
 
 
