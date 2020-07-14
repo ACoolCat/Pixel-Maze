@@ -104,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
   sugarPillEaten()
   gumdropEaten()
   checkForGameOver()
+  checkForWin()
 
 
   }
@@ -193,5 +194,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-
+  function checkForWin(){
+    if(score > 272){
+      monsters.forEach(monster => clearInterval(monster.timerId))
+      document.removeEventListener('keyup', moveHero)
+      setTimeout(function(){alert('You won')}, 500)
+    }
+  }
 })
