@@ -58,4 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   createBoard()
+
+  let heroCurrentIndex = 490
+  squares[heroCurrentIndex].classList.add('hero')
+
+  function moveHero(e){
+    squares[heroCurrentIndex].classList.remove('hero')
+  }
 })
