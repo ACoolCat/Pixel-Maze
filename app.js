@@ -104,4 +104,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   }
   document.addEventListener('keyup', moveHero)
+
+
+
+
+  class Monster{
+    constructor(className, startIndex, speed){
+      this.className = className
+      this.startIndex = startIndex
+      this.speed = speed
+      this.currentIndex = startIndex
+    }
+  }
+
+  monster = [
+    new Monster('bill', 348, 250),
+    new Monster('bob', 377, 400),
+    new Monster('biff', 351, 300),
+    new Monster('bloid', 378, 500)
+  ]
+
+  monster.forEach(monster => {
+    squares[monster.currentIndex].classList.add(monster.className)
+    squares[monster.currentIndex].classList.add('monster')
+  })
 })
