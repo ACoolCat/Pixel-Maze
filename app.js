@@ -103,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sugarPillEaten()
   gumdropEaten()
+  checkForGameOver()
 
 
   }
@@ -178,9 +179,19 @@ document.addEventListener('DOMContentLoaded', () => {
         score +=100
         squares[monster.currentIndex].classList.add(monster.className, 'monster')
       }
-      // checkForGameOver()
+      checkForGameOver()
 
     }, monster.speed)
   }
+
+  function checkForGameOver() {
+    if (squares[heroCurrentIndex].classList.contains('monster')
+    && !squares[heroCurrentIndex].classList.contains('hunted-monster')){
+      monsters.forEach(hero => clearInterval(hero.timerId))
+      document.removeEventListener('keyup', moveHero)
+      setTimeout(function(){alert('Game Over!')}, 500)
+    }
+  }
+
 
 })
