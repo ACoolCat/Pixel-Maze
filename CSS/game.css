@@ -1,3 +1,28 @@
-*{
-  background-color: blue;
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 560px;
+  height: 560px;
+  border: solid black;
+  background-color: black;
+}
+
+.grid div{
+  width: 20px;
+  height: 20px;
+}
+
+.pac-dot{
+  background-color: #FAFAD2;
+  border: 5px solid black;
+  box-sizing: border-box;
+}
+
+.wall{
+  background-color: #F08080;
+}
+
+.power-pellet{
+  background-color: #FAFAD2;
+  border-radius: 10px;
 }
