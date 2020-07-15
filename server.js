@@ -17,9 +17,10 @@ db.on('connected', () => console.log('mongo connected: ', MONGODB_URI))
 db.on('disconnected', () => console.log('mongo disconnected'))
 // middleware
 // use the public folder
-app.use(express.static('public'))
+// app.use(express.static('public'))
 app.use(express.urlencoded({ extended: false}))
 app.use(methodOverride('_method'))
+app.use(express.static(path.join(__dirname, 'public')));
 // routes
 app.get('/', (req, res) => {
   res.render('index.html');
