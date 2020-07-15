@@ -22,8 +22,8 @@ app.use(express.urlencoded({ extended: false}))
 app.use(methodOverride('_method'))
 // routes
 app.get('/', (req, res) => {
-  res.render('index.html')
-})
+  res.render('game.ejs');
+});
 app.listen(PORT, () => {
   console.log('Listening on port:', PORT)
 })
