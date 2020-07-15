@@ -21,6 +21,7 @@ db.on('disconnected', () => console.log('mongo disconnected'))
 app.use(express.urlencoded({ extended: false}))
 app.use(methodOverride('_method'))
 app.use(express.static(path.join(__dirname, 'public')));
+app.engine('html', require('ejs').renderFile);
 // routes
 app.get('/', (req, res) => {
   res.render('index.html');
