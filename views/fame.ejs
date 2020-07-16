@@ -5,6 +5,15 @@
     <title></title>
   </head>
   <body>
-    Hall of fame
+    <div class="fame">
+      <h1>Hall of fame</h1>
+      <div class="container">
+        <%for(var i=0; i < winner.length; i++) {%>
+          <div class="data">
+            <%=winner[i].name;%>
+          </div>
+        <%}%>
+      </div>
+    </div>
   </body>
 </html>
