@@ -88,5 +88,6 @@ body{
 .container{
   border: 3px solid blue;
   background-color: black;
-  color: white; 
+  color: white;
+  list-style: none;
 }
