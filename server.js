@@ -6,8 +6,7 @@ const app = express()
 const db = mongoose.connection
 require('dotenv').config()
 const Winner = require('./models/winner.js');
-require('express-session')
-const session = require('express-session')
+
 
 // PORT
 const PORT = process.env.PORT || 3333
