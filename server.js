@@ -47,9 +47,7 @@ app.get('/halloffame', (req, res) => {
 });
 
 app.post('/halloffame', (req, res) => {
-  Winner.create(req.body, (error, createdWinner) => {
-    res.send('working hard')
-  })
+  res.send('test')
 })
 
 app.listen(PORT, () => {
