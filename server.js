@@ -6,13 +6,6 @@ const app = express()
 const db = mongoose.connection
 require('dotenv').config()
 const Winner = require('./models/winner.js');
-require('express-session')
-const session = require('express-session')
-app.use(session({
-      secret: "feedmeseymour", //a random string do not copy this value or your stuff will get hacked
-      resave: false,
-      saveUninitialized: false
-}));
 
 
 // PORT
@@ -53,11 +46,11 @@ app.get('/halloffame', (req, res) => {
   })
 });
 
-app.post('/halloffame', (req, res) => {
-  Winner.create(req.body, (error, createdWinner) => {
-    res.redirect('/halloffame')
-  })
-})
+// app.post('/halloffame', (req, res) => {
+//   Winner.create(req.body, (error, createdWinner) => {
+//     res.redirect('/halloffame')
+//   })
+// })
 
 app.listen(PORT, () => {
   console.log('Listening on port:', PORT)
