@@ -1,3 +1,7 @@
+*{
+  background-color: black
+}
+
 body{
   margin: 0px;
 }
@@ -11,7 +15,7 @@ h1{
   flex-wrap: wrap;
   width: 560px;
   height: 560px;
-  border: solid black;
+  border: solid blue;
   background-color: black;
 }
 
@@ -66,7 +70,6 @@ h1{
 }
 
 .lose {
-  background-color: black;
   color: red;
   width: 100vw;
   height: 100vh;
@@ -83,7 +86,6 @@ h1{
 }
 
 .fame {
-  background-color: black;
   color: blue;
   width: 100vw;
   height: 100vh;
@@ -92,7 +94,10 @@ h1{
 
 .container{
   border: 3px solid blue;
-  background-color: black;
   color: white;
   list-style: none;
+}
+
+.game{
+  margin-left: 50vw;
 }
