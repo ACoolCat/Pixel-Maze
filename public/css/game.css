@@ -67,3 +67,7 @@ body{
   width: 100vw;
   height: 100vh;
 }
+
+.lose h1{
+  margin-top: 50vh;
+}
