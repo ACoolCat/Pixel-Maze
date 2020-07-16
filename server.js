@@ -33,11 +33,21 @@ app.get('/lose', (req, res) => {
   res.render('lose.ejs');
 });
 
+app.get('/halloffame/win', (req, res) => {
+  res.render('win.ejs')
+});
+
 app.get('/halloffame', (req, res) => {
   Winner.find({}, (error, allWinner) => {
     res.render('fame.ejs', {
       winner: allWinner
     });
+  })
+});
+
+app.post('/halloffame', (req, res) => {
+  Winner.create(req.body, (err, createdWinner) => {
+    res.redirect('/halloffame')
   })
 })
 
