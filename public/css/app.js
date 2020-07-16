@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
     && !squares[heroCurrentIndex].classList.contains('hunted-monster')){
       monsters.forEach(hero => clearInterval(hero.timerId))
       document.removeEventListener('keyup', moveHero)
-      setTimeout(function(){alert('Game Over!')}, 500)
+      window.location = 'https://pixelmaze.herokuapp.com/lose';
     }
   }
 
