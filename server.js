@@ -46,11 +46,11 @@ app.get('/halloffame', (req, res) => {
   })
 });
 
-// app.post('/halloffame', (req, res) => {
-//   Winner.create(req.body, (error, createdWinner) => {
-//     res.redirect('/halloffame')
-//   })
-// })
+app.post('/halloffame', (req, res) => {
+  Winner.create(req.body, (error, createdWinner) => {
+    res.send('working hard')
+  })
+})
 
 app.listen(PORT, () => {
   console.log('Listening on port:', PORT)
