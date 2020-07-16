@@ -65,8 +65,9 @@ body{
   color: red;
   width: 100vw;
   height: 100vh;
-  grid-template-columns: 100000vh auto auto;
-  grid-template-rows: 1000000vw auto auto;
+  display: grid;
+  grid-template-columns: 50vh auto auto;
+  grid-template-rows: 50vw auto auto;
   }
 
 #loseH1{
