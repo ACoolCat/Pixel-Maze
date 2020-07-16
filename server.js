@@ -47,7 +47,9 @@ app.get('/halloffame', (req, res) => {
 });
 
 app.post('/halloffame', (req, res) => {
-  res.send('test')
+  Winner.create(req.body, (error, createdWinner) => {
+    res.redirect('/halloffame')
+  })
 })
 
 app.listen(PORT, () => {
