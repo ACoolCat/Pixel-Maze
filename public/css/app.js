@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(score > 272){
       monsters.forEach(monster => clearInterval(monster.timerId))
       document.removeEventListener('keyup', moveHero)
-      window.location = 'https://pixelmaze.herokuapp.com/halloffame/win';
+      window.location = '/halloffame/win';
     }
   }
 })
