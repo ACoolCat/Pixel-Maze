@@ -1,6 +1,11 @@
 body{
   margin: 0px;
 }
+
+h1{
+  margin: 0px;
+}
+
 .grid {
   display: flex;
   flex-wrap: wrap;
@@ -91,3 +96,12 @@ body{
   color: white;
   list-style: none;
 }
+
+
+.win {
+  background-color: black;
+  color: blue;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  }
