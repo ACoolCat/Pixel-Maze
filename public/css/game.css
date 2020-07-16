@@ -77,6 +77,10 @@ h1{
   grid-template-rows: 50vh auto auto;
   }
 
+  .lose a{
+    color: red;
+    }
+
 #loseH1{
   grid-row-start: 2;
   grid-column-start: 2;
