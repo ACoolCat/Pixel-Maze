@@ -104,4 +104,9 @@ h1{
 
 .button{
   color: white;
+  background-color: blue;
+}
+
+.field{
+  background-color: white;
 }
