@@ -26,6 +26,11 @@ app.engine('html', require('ejs').renderFile);
 app.get('/', (req, res) => {
   res.render('index.html');
 });
+
+app.get('/lose', (req, res) => {
+  res.render('lose.ejs');
+});
+
 app.listen(PORT, () => {
   console.log('Listening on port:', PORT)
 })
