@@ -47,7 +47,7 @@ app.get('/halloffame', (req, res) => {
 });
 
 app.post('/halloffame', (req, res) => {
-  Winner.create(req.body, (err, createdWinner) => {
+  Winner.create(req.body, (error, createdWinner) => {
     res.redirect('/halloffame')
   })
 })
