@@ -57,3 +57,9 @@
   background-color: aquamarine;
   border: 0px;
 }
+
+.lose {
+  text-align: center;
+  background-color: black;
+  color: red;
+}
