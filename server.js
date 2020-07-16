@@ -6,13 +6,6 @@ const app = express()
 const db = mongoose.connection
 require('dotenv').config()
 const Winner = require('./models/winner.js');
-require('express-session')
-const session = require('express-session')
-app.use(session({
-      secret: "fillmewithlight", //a random string do not copy this value or your stuff will get hacked
-      resave: false,
-      saveUninitialized: false
-}));
 
 
 // PORT
