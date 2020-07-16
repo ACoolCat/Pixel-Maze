@@ -1,4 +1,6 @@
-
+body{
+  margin: 0px;
+}
 .grid {
   display: flex;
   flex-wrap: wrap;
