@@ -5,6 +5,8 @@ const mongoose = require('mongoose')
 const app = express()
 const db = mongoose.connection
 require('dotenv').config()
+const Winner = require('./models/winner.js');
+
 // PORT
 const PORT = process.env.PORT || 3333
 // Database
@@ -30,6 +32,14 @@ app.get('/', (req, res) => {
 app.get('/lose', (req, res) => {
   res.render('lose.ejs');
 });
+
+app.get('/halloffame', (req, res) => {
+  Winner.find({}, (error, allWinner) => {
+    res.render('fame.ejs', {
+      winner: allWinner
+    });
+  })
+})
 
 app.listen(PORT, () => {
   console.log('Listening on port:', PORT)
