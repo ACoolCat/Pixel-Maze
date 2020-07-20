@@ -108,7 +108,7 @@ h1{
   color: white;
   list-style: none;
   width: 25vw;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 .game{
@@ -131,6 +131,5 @@ h1{
 
 @keyframes color-change{
   0% {color: blue;}
-  50% {color: white;}
-  100% {color: blue;}
+  100% {color: white;}
 }
