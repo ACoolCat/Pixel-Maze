@@ -108,6 +108,7 @@ h1{
   color: white;
   list-style: none;
   width: 25vw;
+  margin: 0 auto; 
 }
 
 .game{
