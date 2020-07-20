@@ -138,4 +138,6 @@ h1{
 .footer{
   color: white;
   text-align: right;
+  bottom: 0;
+  right: 0;
 }
