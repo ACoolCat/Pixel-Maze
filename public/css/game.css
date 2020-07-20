@@ -134,3 +134,9 @@ h1{
   50% {color: white;}
   100% {color: blue;}
 }
+
+.footer{
+  bottom: 0;
+  right: 0;
+  text-align: right;
+}
