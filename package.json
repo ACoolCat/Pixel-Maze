@@ -4,6 +4,11 @@
   "engines": {
     "node": "12.18.2"
   },
+  "scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "./node_modules/.bin/netlify-lambda serve src",
+  "build": "react-scripts build"
+},
   "description": "Pacman-like game.",
   "main": "server.js",
   "scripts": {
